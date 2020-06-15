@@ -45,8 +45,7 @@ delete = (ID) => {
   })
 }
  */
-   render() {
-     const{employeeData}=this.state    
+   render() { 
      return (  
        <div className="table">
            
@@ -71,7 +70,7 @@ delete = (ID) => {
                  
                     
               
-               <TableCell align="left">{d.value}</TableCell>
+               <TableCell  align="left">{d.value}</TableCell>
                <TableCell align="left">{d.operationType}</TableCell>
                <TableCell align="left">{d.result}</TableCell>
                <TableCell align="right"><Button  style={{colour:'red'}}variant="contained" onClick={() => this.delete(d.Id)}>Delete</Button></TableCell>
