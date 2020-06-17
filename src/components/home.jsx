@@ -23,14 +23,14 @@ export class Home extends Component {
             ValueOneUnit :"",
             valueTwo:"",
             ValueTwoUnit:"",
-            volumeImg:'beakerInactive',
             lengthImg:"scaleActive",
-            tempratureImg:'hotInactive',
             lengthActive:true,
-            volumeActive:false,
-            temperatureActive:false,
             lengthContainer:"lengthContainer",
+            volumeImg:'beakerInactive',
+            volumeActive:false,
+            tempratureImg:'hotInactive',   
             volumeContainer:"volumeContainer",
+            temperatureActive:false,        
             temperatureContainer:"temperatureContainer"
         }
     }
@@ -40,7 +40,32 @@ export class Home extends Component {
         this.setState({[eve.target.name]:eve.target.value})
     }    
    
-    // on temparature svg image click handler
+     clickLength=eve=>{
+        this.setState({
+            lengthActive:true, 
+            lengthImg:"scaleActive",
+            lengthContainer:"imageContainer",
+            volumeActive:false,
+            volumeContainer:"imageContainer",
+            volumeImg:'beakerInactive',
+            temperatureActive:false,
+            tempratureImg:"hotInactive",
+            lengthContainer:"lengthContainer",
+        })
+    }
+    clickVolume=eve=>{
+        this.setState({
+            lengthActive:false, 
+            lengthImg:"scaleInactive",
+            lengthContainer:"imageContainer",
+            volumeActive:true,
+            volumeContainer:"imageContainer",
+            volumeImg:'beakerActive',
+            temperatureActive:false,
+            tempratureImg:"hotInactive",
+            temperatureContainer:"temperatureContainer",
+        })
+    }
     clickTemparature=eve=>{
         this.setState({
             lengthActive:false, 
@@ -72,22 +97,22 @@ export class Home extends Component {
         }
 
         return (
-            <div className ='HomepageBody'>
+            <div >
                 <UpperBar/>
                 <Header/>
                 <div className="homeContainer">
                     <div id="chooseTypeStyle"><label >ChooseType</label> </div><br/>
                     <div  id="ImageContainer">                        
-                        <div className={this.state.lengthContainer} onMouseEnter={this.onLength} onMouseLeave={this.offLenth} onClick={this.clickLength}> 
+                        <div className={this.state.lengthContainer} onClick={this.clickLength}> 
                             <div><img className={this.state.lengthImg}/></div>  
                             <div ><label>Length</label></div>
                         </div>         
                         
-                        <div className={this.state.temperatureContainer} onMouseOver={this.onTempareature} onMouseLeave={this.offTempareature} onClick={this.clickTemparature}> 
+                        <div className={this.state.temperatureContainer}  onClick={this.clickTemparature}> 
                             <img className={this.state.tempratureImg}/> <br/>
                             <div ><label>Temperature</label></div>
                         </div>  
-                        <div className={this.state.volumeContainer} onMouseOver={this.onVolume} onMouseLeave={this.offVolume} onClick={this.clickVolume}> 
+                        <div className={this.state.volumeContainer}  onClick={this.clickVolume}> 
                             <img className={this.state.volumeImg}/> <br/>
                             <div ><label>Volume</label></div>
                         </div>                 
