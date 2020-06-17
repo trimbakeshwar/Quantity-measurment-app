@@ -1,7 +1,109 @@
-.home{
-    max-width: 1366px;
-    height: 100vh;
-    margin: 0 auto 0 auto;
+
+ .homeContainer{
+    background-color: rgb(248, 248, 255);
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    width: 40%;
+    max-width: 80%;
+ }
+ .lengthContainer{   
+   background: #EDFDF9 0% 0% no-repeat padding-box;
+   box-shadow: 0px 3px 6px #00000029;
+   border: 1px solid #0EC098;
+    width:120px;
+    height:120px;
     display: flex;
-    flex-flow: column;
-}
+    flex-direction: column;   
+    border-radius: 7px;
+    opacity: 1;
+    position: relative;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+ }
+ .temperatureContainer{
+   box-shadow: 0px 3px 6px #00000029;
+   background: #FFEEF0 0% 0% no-repeat padding-box;
+   border: 1px solid #FD5160;
+    width:120px;
+    height:120px;
+    display: flex;
+    flex-direction: column;  
+    border-radius: 7px;
+    opacity: 1;   
+    position: relative;
+    justify-content: center;
+    justify-items: auto;
+    align-items: center;
+ }
+ .volumeContainer{
+   background: #E8DDFF 0% 0% no-repeat padding-box;
+   box-shadow: 0px 3px 6px #00000029;
+   border: 1px solid #7224FF;
+    width:120px;
+    height:120px;
+    display: flex;   
+    flex-direction: column;   
+    position: relative;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    border-radius: 7px;
+    opacity: 1;
+ }
+ .scaleActive{
+    content:url("../image/scale.svg");   
+    border-color: #0EC098;
+    background-color: #F5F6FA;
+    
+ }
+ 
+ .scaleInactive{
+    content:url("../image/scale-1.svg");
+    
+ }
+ .beakerActive{
+    content:url("../image/beaker.svg");
+    border-color: #7224FF;
+    background-color: #E5DAFC;   
+ }
+ .beakerInactive{
+    content:url("../image/beaker1.svg");
+    
+ }
+ .hotActive{
+    content:url("../image/hot.svg");
+    border-color: #FD5160;
+    background-color: #FFEEF0;
+    
+ }
+ .hotInactive{
+    content:url("../image/hot-1.svg");
+    
+ }
+ 
+ 
+ .imageContainer{   
+    width:120px;
+    height:120px;
+    display: flex;
+    flex-direction: column;
+     justify-content: center;
+    justify-items: center;
+    align-items: center;
+    background-color: white; 
+   
+ }
+
+ 
+ #ImageContainer{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    margin-bottom: 15px;
+    justify-content: space-evenly;
+    
+ }
+
