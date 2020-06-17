@@ -34,7 +34,7 @@ export class Home extends Component {
             temperatureContainer:"temperatureContainer"
         }
     }
-    // on change handler for units
+
     onChangeHandler = eve =>{
         eve.preventDefault()  
         this.setState({[eve.target.name]:eve.target.value})
@@ -44,7 +44,7 @@ export class Home extends Component {
         this.setState({
             lengthActive:true, 
             lengthImg:"scaleActive",
-            lengthContainer:"imageContainer",
+            temperatureContainer:"imageContainer",
             volumeActive:false,
             volumeContainer:"imageContainer",
             volumeImg:'beakerInactive',
@@ -53,18 +53,48 @@ export class Home extends Component {
             lengthContainer:"lengthContainer",
         })
     }
+    MousonLength = eve =>{
+        this.setState({
+            lengthImg:"scaleActive",
+            lengthContainer:'lengthContainer'
+        })
+    }
+
+    MouseLeaveLength= eve =>{
+        if(this.state.lengthActive === false){
+            this.setState({
+                lengthImg:"scaleInactive",
+                lengthContainer:"imageContainer"
+            })
+        }
+    }
     clickVolume=eve=>{
         this.setState({
             lengthActive:false, 
             lengthImg:"scaleInactive",
             lengthContainer:"imageContainer",
             volumeActive:true,
-            volumeContainer:"imageContainer",
+            temperatureContainer:"imageContainer",
             volumeImg:'beakerActive',
             temperatureActive:false,
             tempratureImg:"hotInactive",
-            temperatureContainer:"temperatureContainer",
+            volumeContainer:"volumeContainer",
         })
+    }
+    MousonVolume = eve =>{
+        this.setState({
+            volumeImg:"beakerActive",
+            volumeContainer:'volumeContainer'
+        })
+    }
+
+    MouseLeaveVolume= eve =>{
+        if(this.state.volumeActive === false){
+            this.setState({
+                volumeImg:"beakerInactive",
+                volumeContainer:"imageContainer"
+            })
+        }
     }
     clickTemparature=eve=>{
         this.setState({
@@ -79,11 +109,26 @@ export class Home extends Component {
             temperatureContainer:"temperatureContainer",
         })
     }
+    MousonTempareature = eve =>{
+        this.setState({
+            tempratureImg:"hotActive",
+            temperatureContainer:'temperatureContainer'
+        })
+    }
+
+    MouseLeaveTempareature= eve =>{
+        if(this.state.temperatureActive === false){
+            this.setState({
+                tempratureImg:"hotInactive",
+                temperatureContainer:"imageContainer"
+            })
+        }
+    }
     
     render() {
         let measurementType=""
         // Units
-        const VolumeUnits =[{value:'MI' , lable:'Ml'},{value:'LITER'}, {value:'GALLON' }]
+        const VolumeUnits =[{value:'ML'},{value:'LITER'}, {value:'GALLON' }]
         const LengthUnits=[{ value:'CM'}, {value:'INCH'},{value:'FEET' },{value:'YARD' } ]
         const temperatureUnits=[ {value:'C'} , {value:'F'} ]
         if(this.state.volumeActive){
@@ -97,22 +142,22 @@ export class Home extends Component {
         }
 
         return (
-            <div >
+            <div className ='HomepageBody'>
                 <UpperBar/>
                 <Header/>
                 <div className="homeContainer">
                     <div id="chooseTypeStyle"><label >ChooseType</label> </div><br/>
                     <div  id="ImageContainer">                        
-                        <div className={this.state.lengthContainer} onClick={this.clickLength}> 
+                        <div className={this.state.lengthContainer} onMouseEnter={this.MousonLength} onMouseLeave={this.MouseLeaveLength} onClick={this.clickLength}> 
                             <div><img className={this.state.lengthImg}/></div>  
                             <div ><label>Length</label></div>
                         </div>         
                         
-                        <div className={this.state.temperatureContainer}  onClick={this.clickTemparature}> 
+                        <div className={this.state.temperatureContainer} onMouseOver={this.MousonTempareature} onMouseLeave={this.MouseLeaveTempareature} onClick={this.clickTemparature}> 
                             <img className={this.state.tempratureImg}/> <br/>
                             <div ><label>Temperature</label></div>
                         </div>  
-                        <div className={this.state.volumeContainer}  onClick={this.clickVolume}> 
+                        <div className={this.state.volumeContainer} onMouseOver={this.MousonVolume} onMouseLeave={this.MouseLeaveVolume} onClick={this.clickVolume}> 
                             <img className={this.state.volumeImg}/> <br/>
                             <div ><label>Volume</label></div>
                         </div>                 
