@@ -146,7 +146,7 @@ export class Home extends Component {
                 <UpperBar/>
                 <Header/>
                 <div className="homeContainer">
-                    <div id="chooseTypeStyle"><label >ChooseType</label> </div><br/>
+                    <div ><label >ChooseType</label> </div><br/>
                     <div  id="ImageContainer">                        
                         <div className={this.state.lengthContainer} onMouseEnter={this.MousonLength} onMouseLeave={this.MouseLeaveLength} onClick={this.clickLength}> 
                             <div><img className={this.state.lengthImg}/></div>  
@@ -162,14 +162,30 @@ export class Home extends Component {
                             <div ><label>Volume</label></div>
                         </div>                 
                     </div>
-                    
-                
-                      
+                    <div className="dropdownContainer">                        
+                        <div>
+                            <lable id="text">FROM</lable><br/><br/>
+                            <TextField className="TextField" type="number" variant="outlined" size="small" value={this.state.valueOne} /><br/>
+                            <Select id="Select" value={this.state.ValueOneUnit} onChange={this.onChangeHandler} >
+                                {measurementType.map( (units) => ( 
+                                    <MenuItem  key={units.value} value={units.value} >{units.value}</MenuItem>
+                                ))}
+                            </Select>
+                        </div>
+                        <div>
+                            <lable id="text">TO</lable><br/><br/>
+                            <TextField className="TextField" type="number" variant="outlined" size="small" value={this.state.valueTwo} /><br/>
+                            <Select id="Select" value={this.state.ValueTwoUnit} onChange={this.onChangeHandler} >
+                                {measurementType.map( (units) => ( 
+                                    <MenuItem  key={units.value} value={units.value} >{units.value}</MenuItem>
+                                ))}
+                            </Select>
                         </div>
                     </div>
-                //</div>
+                </div>
+            </div>
 
-            //</div>
+            
         );
     }
 }
