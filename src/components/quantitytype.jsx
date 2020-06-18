@@ -67,7 +67,29 @@ export  default class QuantityType extends Component{
           })
     }
     
-      
+    operationWithValueTwo = eve  =>{     
+
+        eve.preventDefault()   
+        this.setState({
+            valueTwo:eve.target.value
+        })        
+        let dataObj= {
+            "value": eve.target.value,
+            "operationType": this.state.ValueTwoUnit+"_TO_"+this.state.ValueOneUnit
+            }   
+        axio.AddData(Config.url,dataObj)
+        .then(response=>{
+           
+            this.setState({
+                valueOne:response.data.data.result
+            })
+            console.log(this.state)
+          })
+          .catch(error=>{
+            console.log(error)
+          })
+    } 
+
 
    
     render()
@@ -86,7 +108,7 @@ export  default class QuantityType extends Component{
             </div>
             <div > 
                 <lable id="text">TO</lable><br/><br/>
-                <TextField className="TextField" type="number" variant="outlined" size="small" value={this.state.valueTwo}  onChange={this.onValueTwoChange} /><br/>
+                <TextField className="TextField" type="number" variant="outlined" size="small" value={this.state.valueTwo}  onChange={this.operationWithValueTwo} /><br/>
                 <Select id="Select" name="ValueTwoUnit" label="ValueTwoUnit" value={this.state.ValueTwoUnit} onChange={this.onChangeHandler} >
                     {this.props.options.map( (units) => ( 
                         <MenuItem  key={units.value} value={units.value} >{units.value}</MenuItem>
