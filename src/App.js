@@ -10,7 +10,6 @@ function App() {
      <div>
   <Router>
   
-     
      <Home />
      </Router>
     </div>
@@ -18,3 +17,5 @@ function App() {
 }
 
 export default App;
+
+//<Route  path="/historys" component={History} />   

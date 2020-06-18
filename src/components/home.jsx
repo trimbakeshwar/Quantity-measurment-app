@@ -10,8 +10,7 @@ import activebeaker from "../image/beaker.svg"
 import "../CSS/homelayout.css";
 import React, { Component } from 'react';
 import{TextField,MenuItem,Select }from '@material-ui/core';
-
-
+import QuantityType from "../components/quantitytype"
 
 export class Home extends Component {
 
@@ -19,10 +18,7 @@ export class Home extends Component {
         super(props);
         this.state={
            
-            ValueOne:"",
-            ValueOneUnit :"",
-            valueTwo:"",
-            ValueTwoUnit:"",
+           
             lengthImg:"scaleActive",
             lengthActive:true,
             lengthContainer:"lengthContainer",
@@ -35,11 +31,11 @@ export class Home extends Component {
         }
     }
 
-    onChangeHandler = eve =>{
+   /* onChangeHandler = eve =>{
         eve.preventDefault()  
         this.setState({[eve.target.name]:eve.target.value})
     }    
-   
+   */
      clickLength=eve=>{
         this.setState({
             lengthActive:true, 
@@ -140,13 +136,13 @@ export class Home extends Component {
         else{
             measurementType=LengthUnits;
         }
-
+       // <QuantityType Types={measurementType}/>
         return (
-            <div className ='HomepageBody'>
+            <div className ='Body'>
                 <UpperBar/>
                 <Header/>
                 <div className="homeContainer">
-                    <div ><label >ChooseType</label> </div><br/>
+                    <div  id="chooselable" ><label>ChooseType</label> </div><br/>
                     <div  id="ImageContainer">                        
                         <div className={this.state.lengthContainer} onMouseEnter={this.MousonLength} onMouseLeave={this.MouseLeaveLength} onClick={this.clickLength}> 
                             <div><img className={this.state.lengthImg}/></div>  
@@ -162,8 +158,20 @@ export class Home extends Component {
                             <div ><label>Volume</label></div>
                         </div>                 
                     </div>
-                    <div className="dropdownContainer">                        
-                        <div>
+                    <QuantityType options={measurementType}></QuantityType>
+                   
+                </div>
+            </div>
+
+            
+        );
+    }
+}
+
+export default Home;
+// <QuantityType values={this.measurementType}/>
+/* <div id="containerForData">                        
+                        <div >
                             <lable id="text">FROM</lable><br/><br/>
                             <TextField className="TextField" type="number" variant="outlined" size="small" value={this.state.valueOne} /><br/>
                             <Select id="Select" value={this.state.ValueOneUnit} onChange={this.onChangeHandler} >
@@ -181,13 +189,4 @@ export class Home extends Component {
                                 ))}
                             </Select>
                         </div>
-                    </div>
-                </div>
-            </div>
-
-            
-        );
-    }
-}
-
-export default Home;
+                    </div> */

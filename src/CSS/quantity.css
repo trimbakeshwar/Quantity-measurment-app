@@ -1,0 +1,37 @@
+#containerForData{
+    display: flex;
+    justify-content:space-around;  
+    flex-direction: row;
+    justify-items:center;
+    align-items: center;
+ }
+ #Select {
+    width: 15em;
+    height: 15px;
+    font-size: 15px;
+    max-height: 15px;   
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #E7DCFE;
+    border-radius: 3px;
+    opacity: 1;
+    size: 15px;
+ }
+ #text{
+    font-size: x-small;
+    max-height: 100px;
+    flex-direction: column;
+    align-self: flex-end; 
+    margin: 0;
+ }
+ .TextField{
+    margin-top: 0;
+    margin-bottom: 0;
+    width: 14em;
+ }
+ #valuescontainer{
+    display: flex;
+    justify-content: space-between;  
+    flex-direction: row;
+    justify-items:center;
+    align-items: center;
+ }

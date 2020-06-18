@@ -1,4 +1,8 @@
-
+.Body{
+   font-size: large;
+   background-color:white;
+   width: 100%;
+}
  .homeContainer{
    background-color: white; 
     position: absolute;
@@ -135,4 +139,16 @@
    flex-direction: column;
    align-self: flex-end; 
    margin: 0;
+}
+
+#containerForData{
+   display: flex;
+   justify-content: space-between;  
+   flex-direction: row;
+   justify-items:center;
+   align-items: center;
+}
+#chooselable{
+   margin-bottom: 15px;
+   margin-left: 10px;
 }

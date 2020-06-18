@@ -10,6 +10,7 @@
  import Button from '@material-ui/core/Button';
  import AxiosService from "../services/axio-services";
  import "../CSS/history.css";
+import Config from '../services/configer-services';
 const axio = new AxiosService();
 
 
@@ -26,7 +27,7 @@ const axio = new AxiosService();
      this.getAllData();
    }
    getAllData = () =>{
-    axio.getAllData().then((json) =>{
+    axio.getAllData(Config.url).then((json) =>{
       console.log("employee array",json);
        this.setState({HistoryData: json.data.data});
        console.log("employee array",this.state);
@@ -35,16 +36,17 @@ const axio = new AxiosService();
     })
   }
     
-  /*
-delete = (ID) => {
-    axio.delete(ID).then((json) => {
+  
+delete = (id) => {
+    axio.delete(Config.url,id).then((json) => {
+      console.log("deleted data",json);
       if (json.data.status === true) {
           alert('Record deleted successfully!!');
         
       }
   })
 }
- */
+ 
    render() { 
      return (  
        <div className="table">
@@ -73,7 +75,7 @@ delete = (ID) => {
                <TableCell  align="left">{d.value}</TableCell>
                <TableCell align="left">{d.operationType}</TableCell>
                <TableCell align="left">{d.result}</TableCell>
-               <TableCell align="right"><Button  style={{colour:'red'}}variant="contained" onClick={() => this.delete(d.Id)}>Delete</Button></TableCell>
+               <TableCell align="right"><Button  style={{colour:'red'}}variant="contained" onClick={() => this.delete(d.id)}>Delete</Button></TableCell>
              </TableRow>
            })
           }
