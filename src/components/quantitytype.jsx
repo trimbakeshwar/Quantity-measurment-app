@@ -1,14 +1,18 @@
 import React, { Component } from 'react';
 import{TextField,MenuItem,Select }from '@material-ui/core';
 import "../CSS/quantity.css"
+import AxiosService from "../services/axio-services";
+import Config from '../services/configer-services';
+const axio = new AxiosService();
+
 export  default class QuantityType extends Component{
     constructor(props){
         super(props)
         this.state={
 
-            ValueOne:"",
+            ValueOne:0,
             ValueOneUnit :"",
-            valueTwo:"",
+            valueTwo:0,
             ValueTwoUnit:"",
         }
 
@@ -18,14 +22,52 @@ export  default class QuantityType extends Component{
         this.setState({[eve.target.name]:eve.target.value})
     }    
     
-   
-    
-    onChangeHandler = eve =>{
-        eve.preventDefault()  
+    operationWithValueOne = eve  =>{     
+
+        eve.preventDefault()   
         this.setState({
-            
-            [eve.target.name]:eve.target.value})
-    }    
+            valueOne:eve.target.value
+        })        
+        let dataObj= {
+            "value": eve.target.value,
+            "operationType": this.state.ValueOneUnit+"_TO_"+this.state.ValueTwoUnit
+            }   
+        axio.AddData(Config.url,dataObj)
+        .then(response=>{
+            console.log("output",response)
+            this.setState({
+                valueTwo:response.data.data.result
+            })
+            console.log(this.state)
+          })
+          .catch(error=>{
+            console.log(error)
+          })
+    }
+     operationWithValueOne = eve  =>{     
+
+        eve.preventDefault()   
+        this.setState({
+            valueOne:eve.target.value
+        })        
+        let dataObj= {
+            "value": eve.target.value,
+            "operationType": this.state.ValueOneUnit+"_TO_"+this.state.ValueTwoUnit
+            }   
+        axio.AddData(Config.url,dataObj)
+        .then(response=>{
+            console.log("output",response)
+            this.setState({
+                valueTwo:response.data.data.result
+            })
+            console.log(this.state)
+          })
+          .catch(error=>{
+            console.log(error)
+          })
+    }
+    
+      
 
    
     render()

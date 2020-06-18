@@ -2,8 +2,8 @@
 import axios from "axios";
  class AxiosService {  
     
-    post(url,data){
-        return axios.post(url,data);
+    AddData(url,data){
+        return axios.post(url+"conversion",data);
     }     
     delete(url,data){
         return axios.delete(url,{data});
