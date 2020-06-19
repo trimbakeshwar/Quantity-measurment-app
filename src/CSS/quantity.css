@@ -52,3 +52,37 @@
         width: 10em;
      }
   }
+  @media only screen and (max-width: 480px) {
+    #containerForData{
+        display: flex;
+        justify-content:space-around;  
+        flex-direction: row;
+        justify-items:center;
+        align-items: center;
+     }
+     #Select {
+        width: 7.2em;
+       
+     }
+     
+     .TextField{
+        width: 7.5em;
+     }
+  }
+  @media only screen and (max-width: 360px) {
+    #containerForData{
+        display: flex;
+        justify-content:space-around;  
+        flex-direction: row;
+        justify-items:center;
+        align-items: center;
+     }
+     #Select {
+        width: 4.2em;
+       
+     }
+     
+     .TextField{
+        width: 5em;
+     }
+  }

@@ -161,3 +161,38 @@
        left: 20%;
     }
  }
+
+ 
+ @media only screen and (max-width: 480px) {
+   .homeContainer{
+      
+       width:100%;
+       left: 10%;
+    }
+     .lengthContainer{   
+  
+    width:100px;
+    height:115px;
+   
+ }
+ .temperatureContainer{
+  
+    width:100px;
+    height:115px;
+   
+ }
+ .volumeContainer{
+
+    width:100px;
+    height:115px;
+
+ }
+ 
+ .imageContainer{   
+   width:100px;
+   height:115px;
+  
+  
+}
+
+ }
