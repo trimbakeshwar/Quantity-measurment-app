@@ -1,4 +1,5 @@
-  
+import UpperBar from "../components/upperBar"
+import Header from "../components/heder"  
  import React, { Component } from 'react';
  import Table from '@material-ui/core/Table';
  import TableBody from '@material-ui/core/TableBody';
@@ -14,7 +15,7 @@ import Config from '../services/configer-services';
 const axio = new AxiosService();
 
 
- export class History extends Component {
+ class History extends Component {
   
    constructor(props){
      super(props);
@@ -38,24 +39,25 @@ const axio = new AxiosService();
     
   
 delete = (id) => {
-    axio.delete(Config.url,id).then((json) => {
-      console.log("deleted data",json);
-      if (json.data.status === true) {
+    axio.delete(Config.url,id).then((response) => {
+      console.log("deleted data",response);
+      if (response.data.success === true) {
           alert('Record deleted successfully!!');
-        
+        this.getAllData();
       }
   })
 }
  
    render() { 
      return (  
-       <div className="table">
-           
-              
+       <div>
+      <UpperBar/>
+      <Header/>
+       <div className="table">        
        <TableContainer  className="table" component={Paper} >    
        <Table id="tabledata" >
-       <TableHead>
-        <TableRow>
+       <TableHead >
+        <TableRow >
        
             
              <TableCell align="left">value</TableCell>
@@ -84,7 +86,7 @@ delete = (id) => {
        </Table>
      </TableContainer>
     </div>
-      
+    </div>
      );    
 
   }

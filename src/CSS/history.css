@@ -4,9 +4,6 @@
     width: 100%;
     border: 1px solid red;
   }
-  .td {
-    border: 1px solid blue;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+  .TableRowcontainer{
+    background-color: lawngreen;
   }

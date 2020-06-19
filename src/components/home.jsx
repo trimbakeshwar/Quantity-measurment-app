@@ -124,9 +124,9 @@ export class Home extends Component {
     render() {
         let measurementType=""
         // Units
-        const VolumeUnits =[{value:'ML'},{value:'LITER'}, {value:'GALLON' }]
+        const VolumeUnits =[{value:'LITRE'},{value:'MILLILITER'}, {value:'GALLON' }]
         const LengthUnits=[{ value:'CM'}, {value:'INCH'},{value:'FEET' },{value:'YARD' } ]
-        const temperatureUnits=[ {value:'C'} , {value:'F'} ]
+        const temperatureUnits=[ {value:'FAHRENHEIT'} , {value:'CELSIUS'} ]
         if(this.state.volumeActive){
             measurementType=VolumeUnits;
         }
@@ -136,7 +136,7 @@ export class Home extends Component {
         else{
             measurementType=LengthUnits;
         }
-       // <QuantityType Types={measurementType}/>
+       
         return (
             <div className ='Body'>
                 <UpperBar/>

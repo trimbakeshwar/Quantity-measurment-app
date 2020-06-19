@@ -39,3 +39,42 @@
     align-items: center;
     justify-content: center;
 }
+@media only screen and (max-width: 360px) {
+    .container
+    {
+        top: 55px;
+      
+        height: 40px;
+        width: 100%;
+        
+        
+    }
+    .quanment
+{ 
+    top:16px;
+    text-align: left;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    line-height: 20px;
+    font-weight: 400;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.history
+{   
+   
+    font-size: 13px;
+    line-height: 18px;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  }

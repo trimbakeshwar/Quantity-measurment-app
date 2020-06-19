@@ -9,8 +9,10 @@ function App() {
    
      <div>
   <Router>
-  
-     <Home />
+  <Route exact path="/" component={Home}/>
+  <Route exact path="/historys" component={History}/>
+    
+    
      </Router>
     </div>
   );
@@ -18,4 +20,4 @@ function App() {
 
 export default App;
 
-//<Route  path="/historys" component={History} />   
+//  
