@@ -6,13 +6,21 @@
     align-items: center;
  }
  #Select {
+   font-family: 'Montserrat', sans-serif;
+   font-size: 13px;
+   font-weight: 500;
+   line-height: 15px;
+   background: #FFFFFF 0% 0% no-repeat padding-box;
+  
+   border-radius: 3px;
+   letter-spacing: 0px;
+   color: #000000;
+   text-transform: capitalize;
     width: 15em;
-    height: 15px;
+    height: 16px;
     font-size: 15px;
-    max-height: 15px;   
-    background: #FFFFFF 0% 0% no-repeat padding-box;
+    max-height: 16px;   
     border: 1px solid #E7DCFE;
-    border-radius: 3px;
     opacity: 1;
     size: 15px;
  }
@@ -27,6 +35,7 @@
     margin-top: 0;
     margin-bottom: 0;
     width: 14em;
+    background-color: white;
  }
  #valuescontainer{
     display: flex;

@@ -1,11 +1,17 @@
 .Body{
+
    font-size: large;
-   background-color:white;
-   width: 100%;
+   background-color:rgb(240, 239, 239);
+   max-width: 100vw;
+   height: 100vh;
    margin: 0 auto 0 auto;
+   display: flex;
+   flex-flow: column;
+   
+
 }
  .homeContainer{
-   background-color: white; 
+   background-color: rgb(240, 239, 239);
     position: absolute;
     top: 30%;
     left: 30%;

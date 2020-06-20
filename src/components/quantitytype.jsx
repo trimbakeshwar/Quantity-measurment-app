@@ -98,20 +98,21 @@ export  default class QuantityType extends Component{
      
         <div id="containerForData">                        
             <div >
-                <lable id="text">FROM</lable><br/><br/>
+                <br/><lable id="text">FROM</lable><br/>
                 <TextField className="TextField" type="number" variant="outlined" size="small" value={this.state.valueOne}  onChange={this.operationWithValueOne} /><br/>
                 <Select id="Select" name="ValueOneUnit" label="ValueOneUnit" value={this.state.ValueOneUnit} onChange={this.onChangeHandler} >
                     {this.props.options.map( (units) => ( 
-                        <MenuItem  key={units.value} value={units.value} >{units.value}</MenuItem>
+                        <option key={units.value} value={units.value} >{units.value}</option>
                     ))}
                 </Select>
             </div>
             <div > 
-                <lable id="text">TO</lable><br/><br/>
+            <br/><lable id="text">TO</lable><br/>
                 <TextField className="TextField" type="number" variant="outlined" size="small" value={this.state.valueTwo}  onChange={this.operationWithValueTwo} /><br/>
                 <Select id="Select" name="ValueTwoUnit" label="ValueTwoUnit" value={this.state.ValueTwoUnit} onChange={this.onChangeHandler} >
                     {this.props.options.map( (units) => ( 
-                        <MenuItem  key={units.value} value={units.value} >{units.value}</MenuItem>
+                      
+                        <option key={units.value} value={units.value} >{units.value}</option>
                     ))}
                 </Select>
             </div>

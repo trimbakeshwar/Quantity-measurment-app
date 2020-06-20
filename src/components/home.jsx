@@ -1,16 +1,10 @@
 
 import UpperBar from "../components/upperBar"
 import Header from "../components/heder"
-import Inactivehot from "../image/hot-1.svg"
-import activehot from "../image/hot.svg"
-import Inactivelength from "../image/scale-1.svg"
-import activelength from "../image/scale.svg"
-import Inactivebeaker from "../image/beaker1.svg"
-import activebeaker from "../image/beaker.svg"
 import "../CSS/homelayout.css";
-import React, { Component } from 'react';
-import{TextField,MenuItem,Select }from '@material-ui/core';
+import React, { Component,PureComponent } from 'react';
 import QuantityType from "../components/quantitytype"
+
 
 export class Home extends Component {
 
@@ -31,11 +25,7 @@ export class Home extends Component {
         }
     }
 
-   /* onChangeHandler = eve =>{
-        eve.preventDefault()  
-        this.setState({[eve.target.name]:eve.target.value})
-    }    
-   */
+ 
      clickLength=eve=>{
         this.setState({
             lengthActive:true, 
@@ -138,7 +128,7 @@ export class Home extends Component {
         }
        
         return (
-            <div className ='Body'>
+            <div className ="Body">
                 <UpperBar/>
                 <Header/>
                 <div className="homeContainer">
@@ -169,24 +159,4 @@ export class Home extends Component {
 }
 
 export default Home;
-// <QuantityType values={this.measurementType}/>
-/* <div id="containerForData">                        
-                        <div >
-                            <lable id="text">FROM</lable><br/><br/>
-                            <TextField className="TextField" type="number" variant="outlined" size="small" value={this.state.valueOne} /><br/>
-                            <Select id="Select" value={this.state.ValueOneUnit} onChange={this.onChangeHandler} >
-                                {measurementType.map( (units) => ( 
-                                    <MenuItem  key={units.value} value={units.value} >{units.value}</MenuItem>
-                                ))}
-                            </Select>
-                        </div>
-                        <div>
-                            <lable id="text">TO</lable><br/><br/>
-                            <TextField className="TextField" type="number" variant="outlined" size="small" value={this.state.valueTwo} /><br/>
-                            <Select id="Select" value={this.state.ValueTwoUnit} onChange={this.onChangeHandler} >
-                                {measurementType.map( (units) => ( 
-                                    <MenuItem  key={units.value} value={units.value} >{units.value}</MenuItem>
-                                ))}
-                            </Select>
-                        </div>
-                    </div> */
+
